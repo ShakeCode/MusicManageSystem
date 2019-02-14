@@ -1,0 +1,98 @@
+create database onlinemusic ;
+use onlinemusic;
+/*用户表*/
+create table t_user(
+	id int auto_increment not null,
+	name varchar(30) not null,
+	password varchar(30) not null,
+	nickname varchar(30) not null,
+	sex varchar(5) not null,
+	qq varchar(15),
+	email varchar(30),
+	introduction varchar(255),
+	primary key(id)
+) ;
+
+INSERT INTO t_user VALUES(1,'test1','1234','abc','男');
+
+/*管理员表*/
+create table t_manager(
+	id int auto_increment not null,
+	name varchar(30) not null,
+	password varchar(30) not null,
+	primary key(id)
+);
+INSERT INTO t_manager VALUES(1,'root','1234');
+
+/*歌曲表*/
+create table t_song(
+	id int auto_increment not null,
+	songName varchar(255) not null,
+	singerID int not null,
+	singer varchar(255) not null,
+	album varchar(255) ,
+	type int not null,
+	fileSize varchar(50) not null,
+	fileURL varchar(255) not null,
+	format varchar(10) not null,
+	hits int not null,
+	download int not null,
+	primary key(id)
+);
+INSERT INTO t_song VALUES(1,'songName','1','singer','',1,'fileSize','fileURL','format',0,0); 
+
+/*歌曲类别表*/
+create table t_songType(
+	id int auto_increment not null,
+	typeName varchar(50) not null,
+	primary key(id)
+);
+insert into t_songType values (1,'儿歌');
+
+
+/*歌词表*/
+create table t_lyc(
+	id int auto_increment not null,
+	lycName varchar(50) not null,
+	songID int not null,
+	lycURL varchar(255) not null,
+	author varchar(255) not null,
+	primary key(id)
+);
+
+/*歌单表*/
+create table t_songList(
+	id int auto_increment not null,
+	userID int not null,
+	songID int not null,
+	name varchar(50) not null,
+	primary key(id,userID,songID)
+);
+
+/*歌手表*/
+create table t_singer(
+	id int auto_increment not null,
+	Name varchar(255) not null,
+	sex varchar(5) not null,
+	views int not null,
+	hobby varchar(255) not null,
+	primary key(id)
+);
+
+/*专辑表*/
+create table t_album(
+	id int auto_increment not null,
+	Name varchar(255) not null,
+	singer varchar(255) not null,
+	views int not null,
+	introduction varchar(255) not null,
+	primary key(id)
+);
+
+/*留言板*/
+create table t_message{
+	id int auto_increment not null,
+	contant varchar(2000) not null,
+	songID int not null,
+	primary key(id)
+}

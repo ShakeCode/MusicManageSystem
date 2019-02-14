@@ -1,0 +1,182 @@
+body {
+	background: #13435A;
+	/*background: #111;*/
+}
+
+.user-logo {
+	margin-right: 5px;
+}
+
+.table {
+	color: #ddd;
+	font-size: 16px;
+	margin-top: 20px;
+}
+
+.action i {
+	
+	font-size: 16px;
+	
+	margin-right: 8px;
+	cursor: pointer;
+}
+
+tbody tr:hover {
+	color: #258CAB;
+}
+
+.action i:hover {
+	border-color: #ddd;
+}
+
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th {
+	vertical-align: middle;
+}
+
+.album-block {
+	margin-top: 100px;
+	padding-left: 80px;
+	padding-right: 80px;
+}
+
+.album-item {
+	position: relative;
+	padding: 5px;
+}
+
+.img-circle {
+	width: 100%;
+	height: 220px;
+	line-height: 250px;
+}
+
+.img-hover {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	padding: 5px;
+	top: 0;
+	left: 0;
+	opacity: 0.5;
+	display: none;
+}
+
+.img-hover .img-circle {
+	background: #1b6d85;
+	font-size:30px;
+}
+
+.album-item:hover img {
+	animation: mymove 5s;
+	-webkit-animation: mymove 5s;
+}
+
+.album-item:hover .img-hover, .singer-item:hover .img-hover{
+	top: 0;
+	display: block;
+	cursor: pointer;
+}
+
+@keyframes mymove {
+	from {
+		transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		/* IE 9 */
+		-moz-transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		/* IE 9 */
+		-moz-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes mymove
+/*Safari and Chrome*/
+
+{
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+.play {
+	font-size: 50px;
+	color: #fff;
+}
+
+.singer-name {
+	
+	color: #ddd;
+	font-size: 16px;
+	margin-top: 5px;
+}
+
+
+
+.page-navigation {
+	text-align: center;
+}
+
+.page-navigation li {
+	cursor: pointer;
+}
+
+.span-circle {
+	padding: 5px 10px;
+	display: inline-block;
+	border: 1px solid #afabab;
+	color:#028ED0;
+	cursor: pointer;
+}
+.singer-item img{
+	width:100%;
+	height:180px;
+	
+}
+
+.singer-item .img-hover{
+	line-height: 200px;
+}
+.singer-container{
+	margin-top:100px;
+}
+.singer-intro-row {
+	height:280px;
+	overflow: hidden;
+	color:#cec8c8;
+}
+.singer-intro-row .song-item{
+	margin-top: 10px;
+	padding:5px 20px;
+	height:220px;
+}
+.singer-intro-row span{
+	margin-top:10px;
+}
+.singer-intro-row h3{
+	color:#fff;
+}
+.singer-container .table-block{
+	margin-top:40px;
+}
+#singer-songs-block{
+	display: none;
+}
+.album-item .fa-play{
+	font-size: 50px;
+	color:#00b4ec;
+}
+.input-group-addon a.button.button-primary.button-small:hover,
+.input-group-addon a.button.button-primary.button-small:visited{
+	color: #0066CC;
+}

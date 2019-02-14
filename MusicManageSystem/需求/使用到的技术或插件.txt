@@ -1,0 +1,2 @@
+前端：富文本编辑器UEditor（百度的）
+后端：ssh（spring，springMVC，hibernate）

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="userDao" class="com.icloud.dao.impl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="songTypeDao" class="com.icloud.dao.impl.SongTypeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="songListDao" class="com.icloud.dao.impl.SongListDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="songDao" class="com.icloud.dao.impl.SongDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="singerDao" class="com.icloud.dao.impl.SingerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="lycDao" class="com.icloud.dao.impl.LycDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="albumDao" class="com.icloud.dao.impl.AlbumDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="messageDao" class="com.icloud.dao.impl.MessageDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="managerDao" class="com.icloud.dao.impl.ManagerDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+
+	<bean id="userServiceBase" class="com.icloud.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="songTypeServiceBase" class="com.icloud.service.impl.SongTypeServiceImpl">
+		<property name="songTypeDao" ref="songTypeDao"></property>
+	</bean>
+	<bean id="songListServiceBase" class="com.icloud.service.impl.SongListServiceImpl">
+		<property name="songListDao" ref="songListDao"></property>
+	</bean>
+	<bean id="songServiceBase" class="com.icloud.service.impl.SongServiceImpl">
+		<property name="songDao" ref="songDao"></property>
+	</bean>
+	<bean id="singerServiceBase" class="com.icloud.service.impl.SingerServiceImpl">
+		<property name="singerDao" ref="singerDao"></property>
+	</bean>
+	<bean id="lycServiceBase" class="com.icloud.service.impl.LycServiceImpl">
+		<property name="lycDao" ref="lycDao"></property>
+	</bean>
+	<bean id="albumServiceBase" class="com.icloud.service.impl.AlbumServiceImpl">
+		<property name="albumDao" ref="albumDao"></property>
+	</bean>
+	<bean id="messageServiceBase" class="com.icloud.service.impl.MessageServiceImpl">
+		<property name="messageDao" ref="messageDao"></property>
+	</bean>
+	<bean id="managerServiceBase" class="com.icloud.service.impl.ManagerServiceImpl">
+		<property name="managerDao" ref="managerDao"></property>
+	</bean>
+	
+
+	<!-- 此处为代理 -->
+	<bean name="userService" parent="transactionProxy">
+		<property name="target" ref="userServiceBase"></property>
+	</bean>
+	<bean name="songTypeService" parent="transactionProxy">
+		<property name="target" ref="songTypeServiceBase"></property>
+	</bean>
+	<bean name="songListService" parent="transactionProxy">
+		<property name="target" ref="songListServiceBase"></property>
+	</bean>
+	<bean name="songService" parent="transactionProxy">
+		<property name="target" ref="songServiceBase"></property>
+	</bean>
+	<bean name="singerService" parent="transactionProxy">
+		<property name="target" ref="singerServiceBase"></property>
+	</bean>
+	<bean name="lycService" parent="transactionProxy">
+		<property name="target" ref="lycServiceBase"></property>
+	</bean>
+	<bean name="albumService" parent="transactionProxy">
+		<property name="target" ref="albumServiceBase"></property>
+	</bean>
+	<bean name="messageService" parent="transactionProxy">
+		<property name="target" ref="messageServiceBase"></property>
+	</bean>
+	<bean name="managerService" parent="transactionProxy">
+		<property name="target" ref="managerServiceBase"></property>
+	</bean>
+</beans>

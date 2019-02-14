@@ -1,0 +1,492 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>主页</title>
+			<link rel="stylesheet" href="${pageContext.request.contextPath }/bootstrap-3.3.7-dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/bootstrap.min.css">
+		<!-- Bootstrap style -->
+
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/hero-slider-style.css">
+		<!-- Hero slider style (https://codyhouse.co/gem/hero-slider/) -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/magnific-popup.css">
+		<!-- Magnific popup style (http://dimsemenov.com/plugins/magnific-popup/) -->
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/templatemo-style.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/buttons.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/home-style.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/animate.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/style.css">
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/jplayer/skin/blue.monday/css/jplayer.blue.monday.min.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/plugin.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/jqueryPagination/css/jquery.pagination.css" />
+		<link rel="stylesheet" href="${pageContext.request.contextPath }/css/custom-style.css" />
+
+		
+		<!-- Preloader, https://ihatetomatoes.net/create-custom-preloading-screen/ -->
+		
+		<!-- load JS files -->
+		<script src="${pageContext.request.contextPath }/js/jquery-1.11.3.min.js"></script>
+		<!-- jQuery (https://jquery.com/download/) -->
+		<script src="${pageContext.request.contextPath }/js/tether.min.js"></script>
+		<!-- Tether for Bootstrap (http://stackoverflow.com/questions/34567939/how-to-fix-the-error-error-bootstrap-tooltips-require-tether-http-github-h) -->
+		<script src="${pageContext.request.contextPath }/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+		<!--<script src="js/bootstrap.min.js"></script>-->
+		<!-- Bootstrap js (v4-alpha.getbootstrap.com/) -->
+		<script src="${pageContext.request.contextPath }/js/hero-slider-main.js"></script>
+		<!-- Hero slider (https://codyhouse.co/gem/hero-slider/) -->
+		<script src="${pageContext.request.contextPath }/js/jquery.magnific-popup.min.js"></script>
+		<!-- Magnific popup (http://dimsemenov.com/plugins/magnific-popup/) -->
+		<script src="${pageContext.request.contextPath }/js/userSet.js"></script>
+		<script src="${pageContext.request.contextPath }/js/home.js"></script>
+		
+		
+		<script src="${pageContext.request.contextPath }/jplayer/jquery.jplayer.min.js"></script>
+		<script src="${pageContext.request.contextPath }/jplayer/jplayer.playlist.min.js"></script>
+		<script src="${pageContext.request.contextPath }/js/plugin.js"></script>
+		<script src="${pageContext.request.contextPath }/js/jquery.dotdotdot.min.js" type="text/javascript"></script>
+		<script src="${pageContext.request.contextPath }/jqueryPagination/js/jquery.pagination.min.js"></script>
+		<script src="${pageContext.request.contextPath }/js/index.js">
+		<!-- Templatemo style -->
+		
+
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      
+</head>
+	<body>
+	<input type="hidden" id="user" value=" <%request.getAttribute("user");%>"/> 
+	<input type="hidden" id="username" value="${username}">
+		<!-- Content -->
+		<div class="cd-hero">
+
+			<!-- Navigation -->
+			<div class="cd-slider-nav">
+				<nav class="navbar">
+					<div class="tm-navbar-bg">
+
+						<a class="navbar-brand text-uppercase" href="#"><i class="glyphicon glyphicon-music"></i>众享音乐</a>
+
+						<button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#tmNavbar">
+                            &#9776;
+                        </button>
+						<div class="input-group search-wrapper">
+							<div class="input-group-addon add-before">
+								<select id="search-select">
+									<option value="0">歌曲</option>
+									<option value="1">歌手</option>
+								</select>
+							</div>
+							<input class="form-control input-has-tip" id="search-input" placeholder="search" />
+							<div class="input-group-addon add-after">
+								<a href="javasrcipt:void(0);" class="button button-primary button-small " id="search-btn"><i class="glyphicon glyphicon-search"></i></a>
+							</div>
+						</div>
+
+						<div class="collapse navbar-toggleable-md text-xs-center text-uppercase tm-navbar" id="tmNavbar">
+
+							<ul class="nav navbar-nav">
+								<li class="nav-item active selected">
+									<a class="nav-link" href="#0" data-no="1">排行榜<span class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#0" data-no="2">歌曲</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#0" data-no="3">歌手</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#0" data-no="4">播放列表</a>
+								</li>
+
+							</ul>
+						</div>
+					</div>
+
+				</nav>
+			</div>
+
+			<ul class="cd-hero-slider">
+
+				<!-- Page 1 排行榜 -->
+				<li class="selected">
+					<div class="cd-full-width">
+						<div class="container-fluid js-tm-page-content tm-page-pad" data-page-no="1">
+							<div class="row text-center">
+								<h2></h2></div>
+							<div class="row">
+								<div class="tm-3-col-container">
+								</div>
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<!-- Page 2 歌曲 -->
+				<li>
+					<div class="cd-full-width">
+						<div class="container js-tm-page-content" data-page-no="2" data-page-type="gallery">
+							<div class="tm-img-gallery tm-img-gallery-container gallery-one">
+								<div class="tab-content" id="songs-block">
+									<div id="songs" class="tab-pane fade in active">
+										<div class="album-block container">
+											<div class="row">
+												<div class="col-md-3 col-sm-4 col-xs-6  album-item-col  text-center" id="1">
+													<div class="album-item">
+														<img src="${pageContext.request.contextPath }/img/singers/dalu.jpg" class="img-circle">
+														<div class="img-hover">
+															<div class="img-circle">
+																大陆
+															</div>
+														</div>
+													</div>
+													<p class="singer-name">大陆</p>
+												</div>
+												<div class="col-md-3 col-sm-4 col-xs-6  album-item-col text-center" id="2">
+													<div class="album-item">
+														<img src="${pageContext.request.contextPath }/img/singers/gangtai.jpg" class="img-circle">
+														<div class="img-hover">
+															<div class="img-circle">
+																港台
+															</div>
+														</div>
+													</div>
+													<p class="singer-name">港台</p>
+												</div>
+
+												<div class="col-md-3 col-sm-4 col-xs-6 album-item-col text-center" id="3">
+													<div class="album-item">
+														<img src="${pageContext.request.contextPath }/img/singers/rihan.jpg" class="img-circle">
+														<div class="img-hover">
+															<div class="img-circle">
+																<a data-toggle="tab" href="#singer-songs">日韩</a>
+															</div>
+														</div>
+													</div>
+													<p class="singer-name">日韩</p>
+												</div>
+
+												<div class="col-md-3 col-sm-4 col-xs-6 album-item-col text-center" id="4">
+													<div class="album-item">
+														<img src="${pageContext.request.contextPath }/img/singers/oumei.jpg" class="img-circle">
+														<div class="img-hover">
+															<div class="img-circle">
+																欧美
+															</div>
+														</div>
+													</div>
+													<p class="singer-name">欧美</p>
+												</div>
+
+											</div>
+										</div>
+										<div class="table-block container table-responsive">
+											<div class="row"><span class="span-circle">一共30首歌曲</span></div>
+											<div class="row">
+												<span class="span-circle mul-play"><i class="glyphicon glyphicon-play"></i>批量播放</span>
+												<span class="span-circle mul-add"><i class="glyphicon glyphicon-plus"></i>批量添加</span>
+											</div>
+											<div id="showPlayList">
+												<table class="table table-hover">
+													<thead>
+														<tr>
+
+															<th style="width:30px"><input type="checkbox" id="checkAll" /></th>
+															<th>歌名</th>
+															<th style="width:100px"></th>
+															<th>歌手</th>
+															<th>专辑</th>
+															<th>时长</th>
+														</tr>
+													</thead>
+													<tbody id="showPlayListItems">
+
+													</tbody>
+												</table>
+
+												<div class="table-foot">
+													<div id="song-page" class="text-center">
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<!--歌手详情-->
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</li>
+
+				<!-- Page 3 歌手 -->
+				<li>
+					<div class="cd-full-width">
+						<div class="container js-tm-page-content" data-page-no="3" data-page-type="gallery">
+							<div class="tm-img-gallery-container tm-img-gallery-container-2">
+								<!--歌手列表-->
+								<div id="album" class="releases spacer">
+									<h3><span class="glyphicon glyphicon-music"></span> 歌手</h3>
+									<div class="row classifyBar">
+										<div class="col-sm-3 col-xs-12 text-center">
+											<a id="1" href="javascript:void(0)">大陆歌手</a>
+										</div>
+										<div class="col-sm-3 col-xs-12 text-center">
+											<a id="2" href="javascript:void(0)">港台歌手</a>
+										</div>
+										<div class="col-sm-3 col-xs-12 text-center">
+											<a id="3" href="javascript:void(0)">日韩歌手</a>
+										</div>
+										<div class="col-sm-3 col-xs-12 text-center">
+											<a id="4" href="javascript:void(0)">欧美歌手</a>
+										</div>
+									</div>
+
+									<div class="row singerGrid">
+
+									</div>
+
+									<div class="row text-center" id="singerPage" class="text-center">
+
+									</div>
+								</div>
+								<!--歌手详情-->
+								<div class="spacer " id="singer-detail">
+									<h3 class="backList"><span class="glyphicon glyphicon-hand-left"></span> 返回歌手列表</h3>
+									<div class="row">
+										<div class="col-md-3 col-sm-6"><img id="poster" class="img-rounded" src="${pageContext.request.contextPath }/img/singers/cyx.jpg" /></div>
+										<div class="col-md-9 col-sm-6 instroduction">
+											<h2 class="tm-text-title">陈奕迅</h2>
+											<div id="dot">陈奕迅（Eason Chan，1974年7月27日－），香港著名歌手、演员，香港演艺人协会副会长之一。 1995年在香港参加第14届新秀歌唱大赛，正式踏入香港乐坛。1996年推出首张大碟《陈奕迅》，1998年推出《我的快乐时代》并获得首个“叱吒乐坛至尊唱片大奖”。2003年成为第二个拿到台湾金曲奖“最佳国语男演唱人”的香港歌手。曾被美国《时代》杂志形容为影响香港乐坛风格的人物。2009年6月以《不想放手》获得金曲奖“最佳国语专辑”奖。1997年，陈奕迅开始参演电影。2010年1月10日，他在“美涛·领衔2009腾讯网星光大典”中凭电影《金钱帝国》获得港台年度电影男演员荣誉。2014年1月24日，陈奕迅获得英国金斯顿大学荣誉学位。2016年，举行“Another Eason's LIFE世界巡回演唱会”。同年，参加综艺节目《中国新歌声第二季》担任导师。2017年5月18日，陈奕迅发行国语EP《放&披风》，同年担任浙江卫视音乐评论节目《中国新歌声第二季》的导师。
+												<a href="javascript:void(0)" class="readmore">更多</a>
+											</div>
+										</div>
+									</div>
+									<div class="row span-group">
+										<span class="span-circle songs-num">一共30首歌曲</span>
+										<span class="span-circle mul-play"><i class="glyphicon glyphicon-play"></i>批量播放</span>
+										<span class="span-circle mul-add"><i class="glyphicon glyphicon-plus"></i>批量添加</span>
+									</div>
+									<div class="row singer-detail" id="showPlayList">
+										<table class="table table-hover">
+											<thead>
+												<tr>
+
+													<th style="width:30px"><input type="checkbox" id="checkAll" /></th>
+													<th>歌名</th>
+													<th style="width:100px"></th>
+													<th>歌手</th>
+													<th>专辑</th>
+													<th>时长</th>
+												</tr>
+											</thead>
+											<tbody id="showPlayListItems">
+
+											</tbody>
+										</table>
+
+										<div class="table-foot">
+											<div id="singer-song-page" class="text-center">
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</li>
+
+				<!-- Page 4 播放 -->
+				<li>
+					<div class="cd-full-width">
+						<div class="container js-tm-page-content" data-page-no="4" data-page-type="gallery">
+							<div class="tm-img-gallery-container tm-img-gallery-container-3">
+								<div id="album">
+									<h3><span class="glyphicon glyphicon-music"></span>播放</h3>
+									<!-- Gallery Two pop up connected with JS code below -->
+									<div class="row">
+										<div class="col-md-6">
+											<div id="jp_container_N" class="jp-video jp-video-270p" role="application" aria-label="media player">
+												<div class="jp-type-playlist">
+
+													<!--播放容器-->
+													<div id="jquery_jplayer_N" class="jp-jplayer" style="width:90%"></div>
+													<div class="jp-gui">
+														<div class="jp-video-play">
+															<button class="jp-video-play-icon" role="button" tabindex="0">play</button>
+														</div>
+														<div class="jp-interface">
+															<div class="jp-progress">
+																<div class="jp-seek-bar">
+																	<div class="jp-play-bar"></div>
+																</div>
+															</div>
+															<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+															<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+															<div class="jp-controls-holder">
+																<div class="jp-controls">
+																	<button class="jp-previous" role="button" tabindex="0">previous</button>
+																	<button class="jp-play" role="button" tabindex="0">play</button>
+																	<button class="jp-next" role="button" tabindex="0">next</button>
+																	<button class="jp-stop" role="button" tabindex="0">stop</button>
+																</div>
+																<div class="jp-volume-controls">
+																	<button class="jp-mute" role="button" tabindex="0">mute</button>
+																	<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+																	<div class="jp-volume-bar">
+																		<div class="jp-volume-bar-value"></div>
+																	</div>
+																</div>
+																<div class="jp-toggles">
+																	<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+																	<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+																	<button class="jp-full-screen" role="button" tabindex="0">full screen</button>
+																</div>
+															</div>
+															<div class="jp-details">
+																<div class="jp-title" aria-label="title">&nbsp;</div>
+															</div>
+														</div>
+													</div>
+													<div class="jp-playlist">
+														<ul>
+															<!-- The method Playlist.displayPlaylist() uses this unordered list -->
+
+														</ul>
+													</div>
+
+												</div>
+												<div class="col-md-6">
+
+												</div>
+												<div class="jp-no-solution">
+													<span>Update Required</span> To play the media you will need to either update your browser to a recent version or update your
+													<a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+												</div>
+											</div>
+										</div>
+										<!--自定义播放列表-->
+										<div class="col-md-6">
+											<div class="play-mul-delete"><span class="span-circle mul-delete"><i class="glyphicon glyphicon-trash"></i>批量删除</span></div>
+											<div id="customPlayList">
+												<table class="table table-hover">
+													<thead>
+														<tr>
+															<th><input type="checkbox" id="checkAll" /></th>
+															<th>操作</th>
+															<th>歌名</th>
+															<th>歌手</th>
+															<th></th>
+														</tr>
+													</thead>
+													<tbody id="customPlayListItems">
+														<!--<tr><td class="play-icon"><i class="glyphicon glyphicon-play"></i></td><td class="song-name">海阔天空</td><td class="singer">Beyond</td><td class="delete-icon"><i class="glyphicon glyphicon-trash"></i></td></tr>-->
+
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- .tm-img-gallery-container -->
+						</div>
+					</div>
+				</li>
+
+			</ul>
+			<!-- .cd-hero-slider -->
+
+		</div>
+		<!-- 弹窗显示结果 -->
+<div class="alert alert-warning alert-dismissible no-display" role="alert">
+ 	<span><i class="glyphicon glyphicon-send"></i><i class="glyphicon" id="text">添加成功</i></span>
+</div>
+<!--弹出框--通知-->
+<div id="notification" class="alert alert-info alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>通知!</strong> 
+  <span class="noti-context">Better check yourself, you're not looking too good.</span>
+</div>
+<!--弹出框2 显示用户登录的状况-->
+<div id="login-container" class="text-center">
+	<div class="login-div login-click">
+		<img class="my-img-circle" src="${pageContext.request.contextPath }/img/cry-face.jpg"/>
+	</div>
+	<p class="user-name login-click">点击登录</p>
+	<p class="log-out span-circle"><i class="glyphicon glyphicon-log-out"></i>退出</p>
+</div>
+
+		<script>
+			function adjustHeightOfPage(pageNo) {
+
+				var offset = 80;
+				var pageContentHeight = 0;
+
+				var pageType = $('div[data-page-no="' + pageNo + '"]').data("page-type");
+
+				if(pageType != undefined && pageType == "gallery") {
+					pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .tm-img-gallery-container").height();
+				} else {
+					pageContentHeight = $(".cd-hero-slider li:nth-of-type(" + pageNo + ") .js-tm-page-content").height();
+				}
+
+				if($(window).width() >= 992) { offset = 120; } else if($(window).width() < 480) { offset = 40; }
+
+				// Get the page height
+				var totalPageHeight = 15 + $('.cd-slider-nav').height() +
+					pageContentHeight + offset +
+					$('.tm-footer').height();
+
+				// Adjust layout based on page height and window height
+				if(totalPageHeight > $(window).height()) {
+					$('.cd-hero-slider').addClass('small-screen');
+					$('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", totalPageHeight + "px");
+				} else {
+					$('.cd-hero-slider').removeClass('small-screen');
+					$('.cd-hero-slider li:nth-of-type(' + pageNo + ')').css("min-height", "100%");
+				}
+			}
+
+			/*
+			    Everything is loaded including images.
+			*/
+			$(window).load(function() {
+
+				adjustHeightOfPage(1); // Adjust page height
+
+				$('#tmNavbar a').click(function() {
+					$('#tmNavbar').collapse('hide');
+
+					adjustHeightOfPage($(this).data("no")); // Adjust page height       
+				});
+
+				/* Browser resized 
+				-----------------------------------------*/
+				$(window).resize(function() {
+					var currentPageNo = $(".cd-hero-slider li.selected .js-tm-page-content").data("page-no");
+
+					// wait 3 seconds
+					setTimeout(function() {
+						adjustHeightOfPage(currentPageNo);
+					}, 1000);
+
+				});
+
+				// Remove preloader (https://ihatetomatoes.net/create-custom-preloading-screen/)
+				$('body').addClass('loaded');
+
+			});
+		</script>
+		
+		</script>
+	</body>
+
+</html>

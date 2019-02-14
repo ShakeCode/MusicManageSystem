@@ -1,0 +1,153 @@
+.no-display {
+	display: none;
+}
+
+th,
+td {
+	text-align: center;
+}
+
+
+/**
+ * 展示列表中的操作按钮
+ */
+
+#showPlayListItems td.action i {
+	visibility: hidden;
+}
+
+#showPlayListItems tr:hover td.action i {
+	visibility: visible;
+}
+
+
+/*------------展示列表中的操作按钮--the end*/
+
+.mul-play,
+.mul-add {
+	margin-right: 10px;
+	font-size: 12px;
+	float: right;
+	cursor: pointer;
+}
+
+.mul-play:hover,
+.mul-add:hover {
+	border: 1px solid #ddd;
+    color: #ddd;
+}
+
+img.img-responsive {
+	height: 164px;
+	width: 100%;
+}
+
+.tm-text-title {
+	color: #fff;
+}
+
+.tm-text.song-name {
+	font-size: 18px;
+	margin-bottom: 0;
+	color: #ddd;
+}
+
+.tm-text.song-singer {
+	font-size: 14px;
+	text-indent: 20px;
+}
+
+.tm-text.song-singer,
+.tm-text.song-name {
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.popular-item {
+	margin-bottom: 10px;
+}
+
+.img-cover {
+	opacity: 0.7;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.tm-3-col-textbox-inner {
+	position: relative;
+	height: 376px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.tm-3-col-textbox-inner:hover .popular-play-icon {
+	visibility: visible;
+}
+
+.popular-play-icon {
+	top: 0;
+	left: 0;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 20;
+	font-size: 60px;
+	line-height: 350px;
+	visibility: hidden;
+}
+
+.img-rounded {
+	border-radius: 30px;
+	box-shadow: 0 0 60px;
+	-webkit-box-shadow: 0 0 60px;
+	-moz-shadow: 0 0 10px;
+	-o-box-shadow: 0 0 20px;
+}
+
+.instroduction {
+	height: 150px;
+	text-indent: 40px;
+}
+
+h2.tm-text-title{
+	margin-bottom: 10px;
+}
+/*-------------------dotdot--------------------------*/
+#dot{
+	height: 130px;
+	width: 100%;
+	padding: 10px 15px;
+    line-height: 25px;
+    
+}
+#dot.opened{
+	background: #2c343b;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+    box-shadow: 0 0 10px;
+    -webkit-box-shadow: 0 0 10px;
+    height: auto;
+}
+a.readmore{
+	font-size: 14px;
+	color: #5bc0de;
+}
+.row.span-group{
+	margin-top:25px;
+}
+/*-------------------dotdot--------------------------*/
+/*8
+ * --------------播放列表滚动条
+ */
+div#customPlayList {
+    height: 340px;
+    overflow-y: auto;
+}
+/*8
+ * --------------播放列表滚动条------------the end
+ */
